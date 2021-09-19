@@ -38,6 +38,7 @@ public enum BMIStatus {
     private static Stream<BMIStatus> evaluateBMIRangeFromValue(BMIStatus[] bmiStatusValues, double bmiValue) {
         Stream<BMIStatus> verifiedBMIStatus = Arrays.stream(bmiStatusValues).filter(bmiStatus ->
                 bmiValue > bmiStatus.getBMIMinRangeValue() && bmiValue < bmiStatus.getBMIMaxRangeValue()
+
         );
         return verifiedBMIStatus;
     }
