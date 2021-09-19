@@ -1,13 +1,14 @@
-import domain.BMIStatus;
-import model.Attributes;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import domain.BMIStatus;
+import model.Attributes;
 import services.BMIAnalyzer;
 import services.BMICalculator;
 import services.MapInputRef;
 import utils.NumberFormatTool;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 
 public class BMITests {
@@ -20,7 +21,7 @@ public class BMITests {
     }
 
     @Test
-    public void shouldReturnEvaluatedBMIValue(){
+    public void shouldReturnEvaluatedBMIValue() {
         double bmiValue = BMICalculator.evaluateBMI(80, 1.80);
         assertEquals(24.691358024691358, bmiValue);
     }
@@ -49,7 +50,9 @@ public class BMITests {
     @Test
     public void shouldFailOnTooTallPeopleInputHeight() {
         MapInputRef mapInputRef = new MapInputRef();
-        Exception exception = assertThrows(Exception.class, () -> mapInputRef.validateAttribute(3, Attributes.HEIGHT));
+        Exception exception = assertThrows(Exception.class, () ->
+                mapInputRef.validateAttribute(3, Attributes.HEIGHT)
+        );
         String exceptionMessage = "Height can't be over 2.80 meters! We're not evaluating a giant's BMI";
         assertEquals(exceptionMessage, exception.getMessage());
     }
@@ -57,16 +60,16 @@ public class BMITests {
     @Test
     public void shouldFailOnTooThinPeopleInputWeight() {
         MapInputRef mapInputRef = new MapInputRef();
-        Exception exception = assertThrows(Exception.class, () -> mapInputRef.validateAttribute(2, Attributes.WEIGHT));
+        Exception exception = assertThrows(Exception.class, () ->
+                mapInputRef.validateAttribute(2, Attributes.WEIGHT)
+        );
         String exceptionMessage = "OMG this is a dead body! Weight can't be less than 3 Kg!";
         assertEquals(exceptionMessage, exception.getMessage());
     }
 
     @Test
-    public void shouldFormatDoubleNumberToTwoDecimalPoint(){
+    public void shouldFormatDoubleNumberToTwoDecimalPoint() {
         double formattedDouble = NumberFormatTool.roundDoubleValue(10);
         assertEquals(10.00, formattedDouble);
     }
-
-
 }
