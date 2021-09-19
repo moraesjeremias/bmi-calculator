@@ -5,12 +5,10 @@ import utils.NumberFormatTool;
 public class BMICalculator {
 
     public double formatBMIResult(double weight, double height) {
-        NumberFormatTool formatTool = new NumberFormatTool();
-        double bmiFormatedResult = formatTool.roundDoubleValue(evaluateBMI(weight, height));
-        return bmiFormatedResult;
+        return NumberFormatTool.roundDoubleValue(evaluateBMI(weight, height));
     }
 
-    public double evaluateBMI(double weight, double height) {
+    public static double evaluateBMI(double weight, double height) {
         return weight / (height * height);
     }
 
