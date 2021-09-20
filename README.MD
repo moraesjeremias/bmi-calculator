@@ -14,4 +14,4 @@ It represents a simple BMI calculator with a few validations for a person's heig
 
 - Test the business logic and validation methods.
 
-- Star this repo, 
+- Star this repo and follow me on Github :D [moraesjeremias](https://github.com/moraesjeremias)
