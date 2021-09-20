@@ -2,7 +2,7 @@
 
 ## Motivation
 
-This repo is one of n assignments for DomBosco University Data Science Course.
+This repo is one of n assignments from DomBosco University Data Science Bachelor - Programming Languages II Course.
 
 It represents a simple BMI calculator with a few validations for a person's height and weight.
 
